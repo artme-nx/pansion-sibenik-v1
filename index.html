@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pansion Šibenik — Soba i doručak u srcu starog grada</title>
+<meta name="description" content="Obiteljski pansion u staroj jezgri Šibenika, 50 metara od katedrale sv. Jakova. Svijetle sobe, domaći doručak i mirno polazište za otkrivanje UNESCO grada na kanalu." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+:root{
+  --bg:#F2EFE8;
+  --bg-2:#EAE5DA;
+  --ink:#2A2622;
+  --ink-soft:#5A534B;
+  --line:#D8D1C4;
+  --accent:#9C5234;          /* terracotta */
+  --accent-2:#2C5C6E;        /* sea blue */
+  --paper:#FBFAF6;
+  --shadow:0 24px 60px -32px rgba(42,38,34,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"DM Sans",system-ui,sans-serif;
+  font-weight:300;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.eyebrow{font-family:"DM Sans";font-weight:500;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--ink-soft)}
+
+/* preloader */
+#pre{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;transition:opacity .8s ease,visibility .8s}
+#pre.done{opacity:0;visibility:hidden}
+#pre .pn{font-family:"Cormorant Garamond";font-size:2.4rem;letter-spacing:.04em;color:var(--ink)}
+#pre .bar{width:120px;height:1px;background:var(--line);position:relative;overflow:hidden}
+#pre .bar::after{content:"";position:absolute;inset:0;background:var(--accent);transform:translateX(-100%);animation:load 1.2s ease forwards}
+@keyframes load{to{transform:translateX(0)}}
+
+/* cursor dot */
+.cursor{position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:9000;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s,opacity .25s;mix-blend-mode:multiply}
+.cursor.big{width:46px;height:46px;background:rgba(156,82,52,.18)}
+@media (hover:none){.cursor{display:none}}
+
+/* header */
+header{position:fixed;top:0;left:0;width:100%;z-index:800;transition:background .4s,box-shadow .4s,padding .4s;padding:22px 0}
+header.scrolled{background:rgba(242,239,232,.9);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding:14px 0}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Cormorant Garamond";font-size:1.5rem;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+.brand small{font-family:"DM Sans";font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:.82rem;letter-spacing:.04em;color:var(--ink-soft);transition:color .25s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:"DM Sans";font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;padding:12px 22px;border-radius:2px;transition:.3s;cursor:pointer;border:1px solid transparent}
+.btn-solid{background:var(--accent);color:#fff}
+.btn-solid:hover{background:#83442b}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg)}
+@media(max-width:880px){.nav-links{display:none}.nav-cta .btn-ghost{display:none}}
+
+/* hero */
+.hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:flex-end;overflow:hidden}
+.hero-img{position:absolute;inset:0;z-index:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.28) 0%,rgba(20,16,12,.05) 38%,rgba(20,16,12,.62) 100%);z-index:1}
+.hero-inner{position:relative;z-index:2;color:#fff;padding-bottom:70px;width:100%}
+.hero h1{font-size:clamp(2.8rem,7vw,5.6rem);font-weight:500;max-width:18ch}
+.hero .lead{max-width:46ch;margin-top:18px;font-size:1.05rem;color:rgba(255,255,255,.9);font-weight:300}
+.hero .eyebrow{color:#fff;opacity:.85}
+.hero-meta{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap;font-size:.8rem;letter-spacing:.04em;color:rgba(255,255,255,.85)}
+.hero-meta span{display:flex;align-items:center;gap:8px}
+.hero-meta span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.scroll-ind{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:#fff}
+.scroll-ind .line{width:1px;height:46px;background:rgba(255,255,255,.5);position:relative;overflow:hidden}
+.scroll-ind .line::after{content:"";position:absolute;top:0;left:0;width:100%;height:50%;background:#fff;animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{0%{transform:translateY(-100%)}100%{transform:translateY(200%)}}
+.scroll-ind small{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase}
+
+/* sections */
+section{position:relative}
+.pad{padding:120px 0}
+.pad-sm{padding:90px 0}
+.sec-head{max-width:640px;margin-bottom:56px}
+.sec-head h2{font-size:clamp(2rem,4.5vw,3.4rem);margin-top:14px}
+.sec-head p{margin-top:18px;color:var(--ink-soft);font-size:1.02rem}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(34px)}
+
+/* manifest */
+.manifest{background:var(--paper)}
+.manifest .big{font-family:"Cormorant Garamond";font-size:clamp(1.7rem,3.6vw,2.8rem);line-height:1.28;max-width:24ch;font-weight:400}
+.manifest .big em{font-style:italic;color:var(--accent)}
+.manifest .grid{display:grid;grid-template-columns:1.3fr .9fr;gap:60px;align-items:center}
+.manifest .clip{overflow:hidden;border-radius:3px}
+.manifest .clip img{width:100%;height:520px;object-fit:cover;clip-path:inset(0 0 100% 0)}
+@media(max-width:860px){.manifest .grid{grid-template-columns:1fr;gap:36px}.manifest .clip img{height:380px}}
+
+/* rooms */
+.rooms{background:var(--bg-2)}
+.swiper{padding-bottom:60px!important;overflow:visible}
+.room-card{background:var(--paper);border-radius:3px;overflow:hidden;box-shadow:var(--shadow);height:auto}
+.room-card .ph{height:300px;overflow:hidden}
+.room-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.room-card:hover .ph img{transform:scale(1.06)}
+.room-card .body{padding:28px 28px 32px}
+.room-card h3{font-size:1.7rem}
+.room-card .cap{display:flex;gap:14px;margin:10px 0 16px;font-size:.78rem;letter-spacing:.04em;color:var(--accent-2);text-transform:uppercase}
+.room-card p{font-size:.92rem;color:var(--ink-soft)}
+.amen{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.amen span{font-size:.72rem;letter-spacing:.03em;padding:5px 11px;border:1px solid var(--line);border-radius:40px;color:var(--ink-soft)}
+.swiper-pagination-bullet{background:var(--ink-soft)}
+.swiper-pagination-bullet-active{background:var(--accent)}
+.s-nav{display:flex;gap:10px;margin-top:8px}
+.s-nav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--ink);background:transparent;cursor:pointer;font-size:1.1rem;transition:.3s;color:var(--ink)}
+.s-nav button:hover{background:var(--ink);color:var(--bg)}
+
+/* explore */
+.explore .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.exp-card{position:relative;height:440px;border-radius:3px;overflow:hidden}
+.exp-card img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s ease}
+.exp-card:hover img{transform:scale(1.07)}
+.exp-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(20,16,12,.78))}
+.exp-card .t{position:absolute;bottom:0;left:0;padding:28px;color:#fff;z-index:2}
+.exp-card .t .n{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.exp-card .t h3{font-size:1.8rem;margin-top:6px}
+.exp-card .t p{font-size:.86rem;color:rgba(255,255,255,.82);margin-top:8px;max-width:32ch;opacity:0;max-height:0;transition:.4s}
+.exp-card:hover .t p{opacity:1;max-height:80px}
+@media(max-width:860px){.explore .grid{grid-template-columns:1fr}.exp-card{height:340px}.exp-card .t p{opacity:1;max-height:80px}}
+
+/* breakfast / usluge */
+.usluge{background:var(--paper)}
+.u-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.u-grid .clip{overflow:hidden;border-radius:3px}
+.u-grid .clip img{width:100%;height:560px;object-fit:cover}
+.u-list{list-style:none;margin-top:26px}
+.u-list li{padding:18px 0;border-top:1px solid var(--line);display:flex;gap:18px}
+.u-list li:last-child{border-bottom:1px solid var(--line)}
+.u-list li .ic{color:var(--accent);font-family:"Cormorant Garamond";font-size:1.4rem;line-height:1}
+.u-list li h4{font-size:1.3rem;font-weight:500}
+.u-list li p{font-size:.9rem;color:var(--ink-soft);margin-top:3px}
+@media(max-width:860px){.u-grid{grid-template-columns:1fr;gap:36px}.u-grid .clip img{height:360px}}
+
+/* gallery */
+.gallery .g{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+.gallery .g a{overflow:hidden;border-radius:3px}
+.gallery .g img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.gallery .g a:hover img{transform:scale(1.08)}
+.gallery .g a:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gallery .g a:nth-child(6){grid-column:span 2}
+@media(max-width:860px){.gallery .g{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.gallery .g a:nth-child(1){grid-column:span 2;grid-row:span 1}.gallery .g a:nth-child(6){grid-column:span 1}}
+
+/* location */
+.location{background:var(--bg-2)}
+.loc-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:stretch}
+.loc-info .row{padding:16px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px}
+.loc-info .row:last-child{border-bottom:1px solid var(--line)}
+.loc-info .row .k{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.loc-info .row .v{text-align:right;font-size:.95rem}
+.map-frame{border-radius:3px;overflow:hidden;min-height:420px;box-shadow:var(--shadow)}
+.map-frame iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.2)}
+@media(max-width:860px){.loc-grid{grid-template-columns:1fr}}
+
+/* enquiry panel */
+.panel-overlay{position:fixed;inset:0;background:rgba(20,16,12,.45);z-index:1000;opacity:0;visibility:hidden;transition:.4s}
+.panel-overlay.open{opacity:1;visibility:visible}
+.panel{position:fixed;top:0;right:0;height:100%;width:440px;max-width:92vw;background:var(--paper);z-index:1001;transform:translateX(100%);transition:transform .5s cubic-bezier(.7,0,.2,1);padding:46px 40px;overflow-y:auto}
+.panel.open{transform:translateX(0)}
+.panel h3{font-size:2rem}
+.panel .close{position:absolute;top:24px;right:28px;font-size:1.6rem;cursor:pointer;color:var(--ink-soft);background:none;border:none}
+.panel label{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 7px}
+.panel input,.panel textarea,.panel select{width:100%;padding:13px 14px;border:1px solid var(--line);background:var(--bg);border-radius:2px;font-family:"DM Sans";font-size:.92rem;color:var(--ink)}
+.panel textarea{min-height:90px;resize:vertical}
+.panel .btn-solid{width:100%;margin-top:24px;padding:15px}
+.panel .or{margin-top:22px;font-size:.86rem;color:var(--ink-soft);text-align:center}
+.panel .or a{color:var(--accent);font-weight:500}
+
+/* footer */
+footer{background:var(--ink);color:#E9E3D7;padding:90px 0 40px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px}
+.f-grid h4{font-family:"DM Sans";font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#B9AE9B;margin-bottom:18px;font-weight:500}
+.f-brand{font-family:"Cormorant Garamond";font-size:2.2rem;line-height:1.1}
+.f-brand p{font-family:"DM Sans";font-size:.92rem;color:#B9AE9B;margin-top:14px;font-weight:300;max-width:34ch}
+.f-grid a{display:block;color:#E9E3D7;font-size:.95rem;margin-bottom:10px;transition:color .25s}
+.f-grid a:hover{color:#fff}
+.f-tel{font-family:"Cormorant Garamond";font-size:1.6rem;color:#fff!important}
+.f-bottom{margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem;color:#9C9180}
+@media(max-width:860px){.f-grid{grid-template-columns:1fr;gap:34px}}
+
+/* sticky mobile bar */
+.mbar{position:fixed;bottom:0;left:0;width:100%;z-index:700;background:var(--paper);border-top:1px solid var(--line);padding:11px 16px;display:none;gap:10px;box-shadow:0 -8px 24px -16px rgba(0,0,0,.4)}
+.mbar .btn{flex:1;padding:14px}
+@media(max-width:880px){.mbar{display:flex}footer{padding-bottom:90px}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero-img img{transform:none}
+  .manifest .clip img{clip-path:none!important}
+}
+</style>
+</head>
+<body>
+<div id="pre"><div class="pn">Pansion Šibenik</div><div class="bar"></div></div>
+<div class="cursor"></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">Pansion Šibenik<small>Stari grad</small></a>
+    <nav class="nav-links">
+      <a href="#sobe">Sobe</a>
+      <a href="#grad">Šibenik</a>
+      <a href="#usluge">Doručak</a>
+      <a href="#galerija">Galerija</a>
+      <a href="#lokacija">Lokacija</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" data-enquiry>Upit</a>
+      <a class="btn btn-solid" href="tel:+385989801862">Rezerviraj</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img"><img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=2000&q=80" alt="Stari grad Šibenik s katedralom sv. Jakova" /></div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <div class="eyebrow">Šibenik · Stara jezgra · 50 m od katedrale</div>
+      <h1>Spavajte u kamenu, probudite se uz katedralu.</h1>
+      <p class="lead">Obiteljski pansion u srcu Šibenika — UNESCO grad strmih kamenih ulica, tvrđava i kanala koji vodi prema moru. Vaša soba, naš doručak, cijeli stari grad pred vratima.</p>
+      <div class="hero-meta">
+        <span>Katedrala sv. Jakova</span>
+        <span>Tvrđava sv. Nikole</span>
+        <span>Domaći doručak</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-ind"><div class="line"></div><small>Listaj</small></div>
+</section>
+
+<!-- MANIFEST -->
+<section class="manifest pad">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow reveal">Naš dom u Šibeniku</div>
+      <p class="big reveal" style="margin-top:18px">Ovaj grad ne gleda se s razglednice — <em>hoda se</em>. Iz našeg ulaza do katedrale sv. Jakova pedeset je koraka, a do mora niz kamene stube koje vode kroz priču dugu šest stoljeća. Mi smo samo vrata kroz koja Šibenik ulazi u vaš odmor.</p>
+    </div>
+    <div class="clip reveal-clip"><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1100&q=80" alt="Kamene ulice i stube starog Šibenika" /></div>
+  </div>
+</section>
+
+<!-- SOBE -->
+<section class="rooms pad" id="sobe">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal">Smještaj</div>
+      <h2 class="reveal">Sobe sa svojim imenom</h2>
+      <p class="reveal">Tri sobe u staroj kamenoj kući, svaka okrenuta svom dijelu grada. Sve su klimatizirane, sa svojom kupaonicom i punim doručkom uračunatim u cijenu.</p>
+    </div>
+    <div class="swiper roomSwiper reveal">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide"><div class="room-card">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80" alt="Soba Jakov" /></div>
+          <div class="body">
+            <h3>Soba Jakov</h3>
+            <div class="cap"><span>2 osobe</span><span>·</span><span>18 m²</span><span>·</span><span>Pogled na grad</span></div>
+            <p>Naša najsvjetlija dvokrevetna soba, s prozorom okrenutim prema zvoniku katedrale. Visoki kameni zid i bijeli lan — jutro počinje s prvim zvonima.</p>
+            <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>Wi‑Fi</span><span>Doručak</span><span>Bračni krevet</span></div>
+          </div>
+        </div></div>
+
+        <div class="swiper-slide"><div class="room-card">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=900&q=80" alt="Soba Kanal" /></div>
+          <div class="body">
+            <h3>Soba Kanal</h3>
+            <div class="cap"><span>2–3 osobe</span><span>·</span><span>22 m²</span><span>·</span><span>Pogled prema moru</span></div>
+            <p>Prostranija soba s pomoćnim ležajem, idealna za par ili manju obitelj. Iz nje se nazire kanal sv. Ante kojim brodovi izlaze na otvoreno more.</p>
+            <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>Wi‑Fi</span><span>Doručak</span><span>Pomoćni ležaj</span></div>
+          </div>
+        </div></div>
+
+        <div class="swiper-slide"><div class="room-card">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=900&q=80" alt="Soba Tvrđava" /></div>
+          <div class="body">
+            <h3>Soba Tvrđava</h3>
+            <div class="cap"><span>2 osobe</span><span>·</span><span>16 m²</span><span>·</span><span>Tiha strana</span></div>
+            <p>Mirna soba u dnu kuće, daleko od ljetne vreve, s pogledom prema tvrđavi sv. Mihovila. Za one koji žele odmor i tišinu nakon dana u gradu.</p>
+            <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>Wi‑Fi</span><span>Doručak</span><span>Tiha lokacija</span></div>
+          </div>
+        </div></div>
+
+        <div class="swiper-slide"><div class="room-card">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=900&q=80" alt="Soba Loža" /></div>
+          <div class="body">
+            <h3>Soba Loža</h3>
+            <div class="cap"><span>2 osobe</span><span>·</span><span>20 m²</span><span>·</span><span>Romantična</span></div>
+            <p>Soba s malim francuskim balkonom iznad kamene uličice. Predvečer, kad se grad smiri, ovdje se najbolje sluša Šibenik.</p>
+            <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>Wi‑Fi</span><span>Doručak</span><span>Balkončić</span></div>
+          </div>
+        </div></div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="s-nav reveal"><button class="rprev" aria-label="Prethodna">‹</button><button class="rnext" aria-label="Sljedeća">›</button></div>
+  </div>
+</section>
+
+<!-- O NAMA -->
+<section class="manifest pad-sm">
+  <div class="wrap grid">
+    <div class="clip reveal-clip"><img src="https://images.unsplash.com/photo-1556909211-36987daf7b4d?auto=format&fit=crop&w=1100&q=80" alt="Domaćin pansiona" /></div>
+    <div>
+      <div class="eyebrow reveal">O nama</div>
+      <h2 class="reveal" style="font-size:clamp(1.9rem,4vw,3rem);margin-top:12px">Obitelj koja živi u istoj ulici</h2>
+      <p class="reveal muted" style="margin-top:18px">Pansion vodimo kao dom, ne kao hotel. Kuća je naša, kao i susjedstvo — pa vam najbolji savjet o gradu damo iz iskustva, a ne s brošure. Reći ćemo vam gdje se pije najbolja kava, kada krenuti na tvrđavu sv. Nikole i kojom se uličicom najljepše silazi do mora.</p>
+      <p class="reveal muted" style="margin-top:14px">Dočekat ćemo vas osobno, pomoći s parkingom u staroj jezgri i pobrinuti se da se osjećate kao gost, a ne kao rezervacija. Šibenik je naš grad — drago nam je što ćete ga upoznati s nama.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ISTRAŽI ŠIBENIK -->
+<section class="explore pad" id="grad">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal">Otkrijte grad</div>
+      <h2 class="reveal">Šibenik pred vašim vratima</h2>
+      <p class="reveal">Sve počinje na pragu pansiona. Tri mjesta po kojima ćete pamtiti grad — i sva su nadohvat ruke.</p>
+    </div>
+    <div class="grid">
+      <div class="exp-card reveal"><img src="https://images.unsplash.com/photo-1591289009723-aef0a1a8a211?auto=format&fit=crop&w=900&q=80" alt="Katedrala sv. Jakova" />
+        <div class="t"><div class="n">UNESCO · 50 m</div><h3>Katedrala sv. Jakova</h3><p>Remek‑djelo Jurja Dalmatinca, sagrađeno bez maltera — samo kamen i umijeće. Frizu od stotinu kamenih glava nema premca u Europi.</p></div>
+      </div>
+      <div class="exp-card reveal"><img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=900&q=80" alt="Tvrđava sv. Nikole" />
+        <div class="t"><div class="n">UNESCO · Kanal sv. Ante</div><h3>Tvrđava sv. Nikole</h3><p>Mletačka utvrda na ulazu u kanal, jedna od najljepših pomorskih utvrda Jadrana. Ljeti ovdje žive koncerti pod zvijezdama.</p></div>
+      </div>
+      <div class="exp-card reveal"><img src="https://images.unsplash.com/photo-1555990538-c52d4a1d6c46?auto=format&fit=crop&w=900&q=80" alt="Stari grad Šibenik" />
+        <div class="t"><div class="n">Stara jezgra</div><h3>Strme kamene ulice</h3><p>Labirint stuba, prolaza i malih trgova. Izgubite se namjerno — svaki ugao otkriva novi pogled na grad i more.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USLUGE / DORUČAK -->
+<section class="usluge pad" id="usluge">
+  <div class="wrap u-grid">
+    <div class="clip reveal-clip"><img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1100&q=80" alt="Domaći doručak" /></div>
+    <div>
+      <div class="eyebrow reveal">Doručak i usluge</div>
+      <h2 class="reveal" style="font-size:clamp(1.9rem,4vw,3rem);margin-top:12px">Dan koji počinje dobro</h2>
+      <ul class="u-list">
+        <li class="reveal"><span class="ic">✦</span><div><h4>Domaći doručak</h4><p>Svježi kruh, dalmatinski pršut i sir, jaja, sezonsko voće i prava kava — uračunato u cijenu sobe.</p></div></li>
+        <li class="reveal"><span class="ic">✦</span><div><h4>Savjet domaćina</h4><p>Karta grada s našim omiljenim mjestima, rezervacije u konobama i pravi raspored za dan.</p></div></li>
+        <li class="reveal"><span class="ic">✦</span><div><h4>Pomoć s parkingom</h4><p>Stara jezgra je pješačka — pokazat ćemo vam najbliže parkiralište i kako do njega.</p></div></li>
+        <li class="reveal"><span class="ic">✦</span><div><h4>Izleti i prijevoz</h4><p>Organiziramo transfere, izlete brodom prema NP Krka i Kornatima te savjete za ulaznice.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIJA -->
+<section class="gallery pad-sm" id="galerija">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal">Galerija</div>
+      <h2 class="reveal">Trenuci iz Šibenika</h2>
+    </div>
+    <div class="g reveal">
+      <a><img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=900&q=80" alt="Krovovi i katedrala" /></a>
+      <a><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=700&q=80" alt="Svijetla soba" /></a>
+      <a><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=700&q=80" alt="Kamene stube" /></a>
+      <a><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=700&q=80" alt="Jadransko more" /></a>
+      <a><img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=700&q=80" alt="Doručak" /></a>
+      <a><img src="https://images.unsplash.com/photo-1505735822548-7c4b8e7c3a08?auto=format&fit=crop&w=900&q=80" alt="Detalj kamena" /></a>
+    </div>
+  </div>
+</section>
+
+<!-- LOKACIJA -->
+<section class="location pad" id="lokacija">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal">Lokacija</div>
+      <h2 class="reveal">Točno tamo gdje želite biti</h2>
+      <p class="reveal">Kačića Miošića 5, u staroj jezgri — pedeset metara od katedrale, na minute od rive i svih znamenitosti.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-info reveal">
+        <div class="row"><span class="k">Adresa</span><span class="v">Kačića Miošića 5<br>22000 Šibenik, Hrvatska</span></div>
+        <div class="row"><span class="k">Do katedrale</span><span class="v">≈ 50 m pješice</span></div>
+        <div class="row"><span class="k">Do rive / mora</span><span class="v">≈ 3 min pješice</span></div>
+        <div class="row"><span class="k">Prijava</span><span class="v">od 14:00</span></div>
+        <div class="row"><span class="k">Odjava</span><span class="v">do 10:00</span></div>
+        <div class="row"><span class="k">Telefon</span><span class="v"><a href="tel:+385989801862" style="color:var(--accent)">+385 98 980 1862</a></span></div>
+        <a class="btn btn-solid" data-enquiry style="margin-top:26px">Pošalji upit</a>
+      </div>
+      <div class="map-frame reveal">
+        <iframe src="https://maps.google.com/maps?q=Pansion+Sibenik+Sibenik&output=embed" loading="lazy" title="Karta — Pansion Šibenik"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap f-grid">
+    <div>
+      <div class="f-brand">Pansion Šibenik</div>
+      <p>Obiteljski pansion u staroj jezgri Šibenika, na pedeset metara od katedrale sv. Jakova. Soba, doručak i cijeli UNESCO grad pred vratima.</p>
+    </div>
+    <div>
+      <h4>Pansion</h4>
+      <a href="#sobe">Sobe</a>
+      <a href="#usluge">Doručak i usluge</a>
+      <a href="#grad">Otkrij Šibenik</a>
+      <a href="#galerija">Galerija</a>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <a class="f-tel" href="tel:+385989801862">+385 98 980 1862</a>
+      <a href="#lokacija">Kačića Miošića 5<br>22000 Šibenik</a>
+      <a data-enquiry style="cursor:pointer;color:#E9B79C">Pošalji upit →</a>
+    </div>
+  </div>
+  <div class="wrap f-bottom">
+    <span>© 2026 Pansion Šibenik. Sva prava pridržana.</span>
+    <span>Stari grad · UNESCO baština · Jadran</span>
+  </div>
+</footer>
+
+<!-- ENQUIRY PANEL -->
+<div class="panel-overlay" data-close></div>
+<aside class="panel" aria-label="Upit">
+  <button class="close" data-close aria-label="Zatvori">×</button>
+  <div class="eyebrow">Upit</div>
+  <h3 style="margin-top:8px">Pošaljite nam upit</h3>
+  <p class="muted" style="font-size:.9rem;margin-top:8px">Javit ćemo vam se s dostupnošću i cijenom u najkraćem roku.</p>
+  <form onsubmit="return sendEnq(event)">
+    <label>Ime i prezime</label><input required placeholder="Vaše ime" />
+    <label>E‑mail</label><input type="email" required placeholder="vas@email.com" />
+    <label>Termin</label><input type="text" placeholder="npr. 12.–15. srpnja" />
+    <label>Broj gostiju</label>
+    <select><option>1 osoba</option><option selected>2 osobe</option><option>3 osobe</option><option>4 osobe</option><option>Obitelj / više</option></select>
+    <label>Poruka</label><textarea placeholder="Soba, posebne želje, pitanja…"></textarea>
+    <button class="btn btn-solid" type="submit">Pošalji upit</button>
+  </form>
+  <p class="or">Radije telefonom? <a href="tel:+385989801862">+385 98 980 1862</a></p>
+</aside>
+
+<!-- MOBILE BAR -->
+<div class="mbar">
+  <a class="btn btn-ghost" data-enquiry>Upit</a>
+  <a class="btn btn-solid" href="tel:+385989801862">Rezerviraj</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// preloader
+window.addEventListener('load',()=>{ setTimeout(()=>document.getElementById('pre').classList.add('done'),1200); });
+
+// Lenis
+let lenis;
+if(!reduce){
+  lenis = new Lenis({lerp:0.2, wheelMultiplier:1, smoothWheel:true, syncTouch:false});
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+}
+
+// header scroll
+const header=document.querySelector('header');
+const onScroll=()=>{ header.classList.toggle('scrolled', window.scrollY>40); };
+onScroll(); window.addEventListener('scroll',onScroll);
+
+// GSAP reveals
+if(!reduce){
+  gsap.registerPlugin(ScrollTrigger);
+  if(lenis) lenis.on('scroll', ScrollTrigger.update);
+
+  gsap.to('.hero-img img',{scale:1,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+  gsap.utils.toArray('.reveal').forEach(el=>{
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 86%'}});
+  });
+  gsap.utils.toArray('.reveal-clip img').forEach(img=>{
+    gsap.to(img,{clipPath:'inset(0 0 0% 0)',duration:1.3,ease:'power3.out',scrollTrigger:{trigger:img,start:'top 85%'}});
+  });
+} else {
+  document.querySelectorAll('.reveal').forEach(e=>{e.style.opacity=1;e.style.transform='none';});
+}
+
+// Swiper rooms
+new Swiper('.roomSwiper',{
+  slidesPerView:1.1, spaceBetween:22, grabCursor:true,
+  pagination:{el:'.swiper-pagination',clickable:true},
+  navigation:{nextEl:'.rnext',prevEl:'.rprev'},
+  breakpoints:{640:{slidesPerView:2,spaceBetween:24},1024:{slidesPerView:3,spaceBetween:28}}
+});
+
+// enquiry panel
+const overlay=document.querySelector('.panel-overlay'), panel=document.querySelector('.panel');
+function openP(){ overlay.classList.add('open'); panel.classList.add('open'); }
+function closeP(){ overlay.classList.remove('open'); panel.classList.remove('open'); }
+document.querySelectorAll('[data-enquiry]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();openP();}));
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeP));
+function sendEnq(e){ e.preventDefault(); alert('Hvala! Vaš upit je zabilježen — javit ćemo vam se uskoro. Za hitno: +385 98 980 1862'); closeP(); return false; }
+
+// custom cursor (hover-capable only)
+if(window.matchMedia('(hover:hover)').matches){
+  const cur=document.querySelector('.cursor');
+  window.addEventListener('mousemove',e=>{ cur.style.left=e.clientX+'px'; cur.style.top=e.clientY+'px'; });
+  document.querySelectorAll('a,button,.room-card,.exp-card,input,textarea,select').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cur.classList.add('big'));
+    el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
+  });
+}
+
+// smooth anchor with lenis
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href'); if(id.length<2)return;
+    const t=document.querySelector(id); if(!t)return; e.preventDefault();
+    if(lenis) lenis.scrollTo(t,{offset:-70}); else t.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
