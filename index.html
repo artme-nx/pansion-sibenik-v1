@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pansion Šibenik — Soba i doručak u srcu starog grada</title>
-<meta name="description" content="Obiteljski pansion u staroj jezgri Šibenika, 50 metara od katedrale sv. Jakova. Svijetle sobe, domaći doručak i mirno polazište za otkrivanje UNESCO grada na kanalu." />
+<title>Pansion Šibenik — sobe u staroj jezgri, 50 m od katedrale</title>
+<meta name="description" content="Pansion u staroj jezgri Šibenika, 50 m od katedrale sv. Jakova. Klimatizirane sobe s vlastitom kupaonicom u staroj kamenoj kući. Prijava od 14:00." />
+<link rel="canonical" href="https://artme-nx.github.io/pansion-sibenik-v1/" />
+<meta property="og:type" content="business.business" />
+<meta property="og:locale" content="hr_HR" />
+<meta property="og:title" content="Pansion Šibenik — sobe u staroj jezgri, 50 m od katedrale" />
+<meta property="og:description" content="Pansion u staroj jezgri Šibenika, 50 m od katedrale sv. Jakova. Klimatizirane sobe s vlastitom kupaonicom u staroj kamenoj kući." />
+<meta property="og:url" content="https://artme-nx.github.io/pansion-sibenik-v1/" />
+<meta property="og:image" content="https://artme-nx.github.io/pansion-sibenik-v1/img/sibenik-panorama.webp" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
@@ -73,11 +81,12 @@ header.scrolled{background:rgba(242,239,232,.9);backdrop-filter:blur(12px);box-s
 .hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:flex-end;overflow:hidden}
 .hero-img{position:absolute;inset:0;z-index:0}
 .hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.28) 0%,rgba(20,16,12,.05) 38%,rgba(20,16,12,.62) 100%);z-index:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.28) 0%,rgba(20,16,12,.06) 30%,rgba(20,16,12,.5) 62%,rgba(20,16,12,.76) 100%);z-index:1}
 .hero-inner{position:relative;z-index:2;color:#fff;padding-bottom:70px;width:100%}
 .hero h1{font-size:clamp(2.8rem,7vw,5.6rem);font-weight:500;max-width:18ch}
 .hero .lead{max-width:46ch;margin-top:18px;font-size:1.05rem;color:rgba(255,255,255,.9);font-weight:300}
-.hero .eyebrow{color:#fff;opacity:.85}
+.hero .eyebrow{color:#fff;opacity:.95;text-shadow:0 1px 12px rgba(20,16,12,.75)}
+.hero h1,.hero .lead,.hero-meta{text-shadow:0 1px 16px rgba(20,16,12,.4)}
 .hero-meta{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap;font-size:.8rem;letter-spacing:.04em;color:rgba(255,255,255,.85)}
 .hero-meta span{display:flex;align-items:center;gap:8px}
 .hero-meta span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
@@ -209,7 +218,90 @@ footer{background:var(--ink);color:#E9E3D7;padding:90px 0 40px}
   .hero-img img{transform:none}
   .manifest .clip img{clip-path:none!important}
 }
+
+/* FAQ */
+.faq{background:var(--paper)}
+.faq .q-list{max-width:860px;margin-top:10px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 0;display:flex;justify-content:space-between;gap:20px;align-items:baseline;font-family:"Cormorant Garamond";font-size:1.3rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-size:1.2rem;flex:0 0 auto}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 20px;color:var(--ink-soft);font-size:.95rem;max-width:70ch}
+.attrib{font-size:.72rem;color:#8A8072;line-height:1.6}
+.attrib a{text-decoration:underline}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "@id": "https://artme-nx.github.io/pansion-sibenik-v1/#pansion",
+  "name": "Pansion Sibenik",
+  "alternateName": "Pansion Šibenik",
+  "description": "Pansion u staroj jezgri Šibenika, 50 metara od katedrale sv. Jakova. Sobe i apartmani u staroj kamenoj kući, uređeni u mediteranskom stilu.",
+  "url": "https://artme-nx.github.io/pansion-sibenik-v1/",
+  "image": ["https://artme-nx.github.io/pansion-sibenik-v1/img/pansion-sibenik-soba-kamena-1.webp"],
+  "telephone": "+385989801862",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ul. Andrije Kačića Miošića 5",
+    "addressLocality": "Šibenik",
+    "postalCode": "22000",
+    "addressRegion": "Šibensko-kninska županija",
+    "addressCountry": "HR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 43.7358661, "longitude": 15.8898207 },
+  "checkinTime": "14:00",
+  "checkoutTime": "10:00",
+  "petsAllowed": false,
+  "smokingAllowed": false,
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Besplatni Wi-Fi", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Klima-uređaj", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Vlastita kupaonica", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Aparat za kavu/čaj u jedinici", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Obiteljske sobe", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Sobe za nepušače", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Zvučna izolacija", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Restoran", "value": false },
+    { "@type": "LocationFeatureSpecification", "name": "Prijevoz iz/do zračne luke", "value": false }
+  ],
+  "sameAs": [
+    "https://www.booking.com/hotel/hr/sibenik.html",
+    "https://www.google.com/maps/place/Pansion+Sibenik/data=!4m2!3m1!1s0x1335281ad3204013:0x7b3499e0496898ff"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://artme-nx.github.io/pansion-sibenik-v1/#faq",
+  "mainEntity": [
+    { "@type": "Question", "name": "Gdje se nalazi Pansion Šibenik?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Na adresi Ul. Andrije Kačića Miošića 5, u staroj jezgri Šibenika, 50 metara od katedrale sv. Jakova. Stara jezgra je pješačka zona." } },
+    { "@type": "Question", "name": "Koje je vrijeme prijave i odjave?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Prijava je od 14:00 do 22:00, a odjava do 10:00. Raniju ili kasniju prijavu zatražite unaprijed; ispunjenje nije zajamčeno." } },
+    { "@type": "Question", "name": "Poslužuje li pansion doručak?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Doručak nije naveden među sadržajima objekta i nije uključen u cijenu. Svaka smještajna jedinica ima aparat za pripremu kave i čaja, a pekare i kafići su u susjednim ulicama." } },
+    { "@type": "Question", "name": "Ima li pansion restoran?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ne, objekt nema restoran. Okružen je restoranima, konobama i kafićima stare jezgre, do kojih se dolazi pješice." } },
+    { "@type": "Question", "name": "Gdje parkirati?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Javno parkiralište dostupno je u blizini objekta i nije ga moguće rezervirati. Cijena je 1,33 € po satu. Stara jezgra je pješačka zona." } },
+    { "@type": "Question", "name": "Primate li kućne ljubimce?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ne, boravak ljubimaca nije dozvoljen." } },
+    { "@type": "Question", "name": "Nudite li prijevoz iz zračne luke?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ne, usluga prijevoza iz/do zračne luke nije dostupna u objektu." } },
+    { "@type": "Question", "name": "Kako su sobe opremljene?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sve sobe imaju klima-uređaj, vlastitu kupaonicu, TV s ravnim ekranom sa zemaljskim i satelitskim programom, zvučnu izolaciju i besplatni Wi-Fi. U svakoj jedinici je aparat za pripremu kave i čaja." } },
+    { "@type": "Question", "name": "Koliko je do plaže, kolodvora i trajektne luke?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Glavna gradska plaža udaljena je 5 minuta hoda. Autobusni kolodvor i trajektna luka također su na 5 minuta hoda, a željeznički kolodvor na 10 minuta hoda." } },
+    { "@type": "Question", "name": "Kako rezervirati sobu?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nazovite +385 98 980 1862 ili pošaljite upit putem obrasca na stranici. Objekt je dostupan i za rezervaciju putem Booking.coma." } }
+  ]
+}
+</script>
 </head>
 <body>
 <div id="pre"><div class="pn">Pansion Šibenik</div><div class="bar"></div></div>
@@ -221,9 +313,10 @@ footer{background:var(--ink);color:#E9E3D7;padding:90px 0 40px}
     <nav class="nav-links">
       <a href="#sobe">Sobe</a>
       <a href="#grad">Šibenik</a>
-      <a href="#usluge">Doručak</a>
+      <a href="#usluge">Sadržaji</a>
       <a href="#galerija">Galerija</a>
       <a href="#lokacija">Lokacija</a>
+      <a href="#faq">Info</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn-ghost" data-enquiry>Upit</a>
@@ -234,16 +327,16 @@ footer{background:var(--ink);color:#E9E3D7;padding:90px 0 40px}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-img"><img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=2000&q=80" alt="Stari grad Šibenik s katedralom sv. Jakova" /></div>
+  <div class="hero-img"><img src="img/sibenik-panorama.webp" width="1600" height="840" alt="Šibenik i stara jezgra iznad kanala, pogled sa zapada" /></div>
   <div class="hero-inner">
     <div class="wrap">
       <div class="eyebrow">Šibenik · Stara jezgra · 50 m od katedrale</div>
-      <h1>Spavajte u kamenu, probudite se uz katedralu.</h1>
-      <p class="lead">Obiteljski pansion u srcu Šibenika — UNESCO grad strmih kamenih ulica, tvrđava i kanala koji vodi prema moru. Vaša soba, naš doručak, cijeli stari grad pred vratima.</p>
+      <h1>Soba u kamenoj kući, pedeset metara od katedrale.</h1>
+      <p class="lead">Pansion u staroj jezgri Šibenika. Stara kamena kuća, klimatizirane sobe s vlastitom kupaonicom, i cijela pješačka jezgra pred vratima.</p>
       <div class="hero-meta">
-        <span>Katedrala sv. Jakova</span>
-        <span>Tvrđava sv. Nikole</span>
-        <span>Domaći doručak</span>
+        <span>Katedrala sv. Jakova · 50 m</span>
+        <span>Gradska plaža · 5 min hoda</span>
+        <span>Trajektna luka · 5 min hoda</span>
       </div>
     </div>
   </div>
@@ -254,10 +347,10 @@ footer{background:var(--ink);color:#E9E3D7;padding:90px 0 40px}
 <section class="manifest pad">
   <div class="wrap grid">
     <div>
-      <div class="eyebrow reveal">Naš dom u Šibeniku</div>
-      <p class="big reveal" style="margin-top:18px">Ovaj grad ne gleda se s razglednice — <em>hoda se</em>. Iz našeg ulaza do katedrale sv. Jakova pedeset je koraka, a do mora niz kamene stube koje vode kroz priču dugu šest stoljeća. Mi smo samo vrata kroz koja Šibenik ulazi u vaš odmor.</p>
+      <div class="eyebrow reveal">Pansion Šibenik</div>
+      <p class="big reveal" style="margin-top:18px">Stara kamena kuća u jezgri Šibenika. Od ulaza do katedrale sv. Jakova ima <em>pedeset metara</em>, do glavne gradske plaže pet minuta hoda. Sve ostalo u ovom gradu ionako se obilazi pješice.</p>
     </div>
-    <div class="clip reveal-clip"><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1100&q=80" alt="Kamene ulice i stube starog Šibenika" /></div>
+    <div class="clip reveal-clip"><img src="img/sibenik-stare-ulice.webp" width="984" height="1400" loading="lazy" alt="Kamena ulica sa stubama u staroj jezgri Šibenika" /></div>
   </div>
 </section>
 
@@ -266,49 +359,39 @@ footer{background:var(--ink);color:#E9E3D7;padding:90px 0 40px}
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow reveal">Smještaj</div>
-      <h2 class="reveal">Sobe sa svojim imenom</h2>
-      <p class="reveal">Tri sobe u staroj kamenoj kući, svaka okrenuta svom dijelu grada. Sve su klimatizirane, sa svojom kupaonicom i punim doručkom uračunatim u cijenu.</p>
+      <h2 class="reveal">Sobe u staroj kamenoj kući</h2>
+      <p class="reveal">Sobe i apartmani uređeni u mediteranskom stilu. Sve jedinice imaju klima-uređaj, vlastitu kupaonicu, TV sa zemaljskim i satelitskim programom, zvučnu izolaciju i besplatni Wi-Fi.</p>
     </div>
     <div class="swiper roomSwiper reveal">
       <div class="swiper-wrapper">
 
         <div class="swiper-slide"><div class="room-card">
-          <div class="ph"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80" alt="Soba Jakov" /></div>
+          <div class="ph"><img src="img/pansion-sibenik-soba-comfort.webp" width="1600" height="1200" loading="lazy" alt="Dvokrevetna soba Comfort u Pansionu Šibenik, bračni krevet uz prozor" /></div>
           <div class="body">
-            <h3>Soba Jakov</h3>
-            <div class="cap"><span>2 osobe</span><span>·</span><span>18 m²</span><span>·</span><span>Pogled na grad</span></div>
-            <p>Naša najsvjetlija dvokrevetna soba, s prozorom okrenutim prema zvoniku katedrale. Visoki kameni zid i bijeli lan — jutro počinje s prvim zvonima.</p>
-            <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>Wi‑Fi</span><span>Doručak</span><span>Bračni krevet</span></div>
+            <h3>Dvokrevetna soba Comfort</h3>
+            <div class="cap"><span>2 osobe</span><span>·</span><span>20 m²</span><span>·</span><span>Pogled na grad</span></div>
+            <p>Soba s velikim bračnim krevetom i pogledom na grad i znamenitosti. Ima prostor za sjedenje, radni stol, hladnjak i privatni ulaz.</p>
+            <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>Wi‑Fi</span><span>Zvučna izolacija</span><span>Privatni ulaz</span></div>
           </div>
         </div></div>
 
         <div class="swiper-slide"><div class="room-card">
-          <div class="ph"><img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=900&q=80" alt="Soba Kanal" /></div>
+          <div class="ph"><img src="img/pansion-sibenik-soba-kamena-1.webp" width="1050" height="1400" loading="lazy" alt="Soba s kamenim zidovima, bračnim krevetom i stolom u Pansionu Šibenik" /></div>
           <div class="body">
-            <h3>Soba Kanal</h3>
-            <div class="cap"><span>2–3 osobe</span><span>·</span><span>22 m²</span><span>·</span><span>Pogled prema moru</span></div>
-            <p>Prostranija soba s pomoćnim ležajem, idealna za par ili manju obitelj. Iz nje se nazire kanal sv. Ante kojim brodovi izlaze na otvoreno more.</p>
-            <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>Wi‑Fi</span><span>Doručak</span><span>Pomoćni ležaj</span></div>
+            <h3>Dvokrevetna soba</h3>
+            <div class="cap"><span>2 osobe</span><span>·</span><span>16 m²</span><span>·</span><span>Pogled na grad</span></div>
+            <p>Soba s bračnim krevetom u kamenom dijelu kuće. Zidovi od kamena i drvene grede, uz klimu, vlastitu kupaonicu i zvučnu izolaciju.</p>
+            <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>Wi‑Fi</span><span>Zvučna izolacija</span><span>TV</span></div>
           </div>
         </div></div>
 
         <div class="swiper-slide"><div class="room-card">
-          <div class="ph"><img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=900&q=80" alt="Soba Tvrđava" /></div>
+          <div class="ph"><img src="img/pansion-sibenik-soba-kamena-2.webp" width="1050" height="1400" loading="lazy" alt="Soba s kamenim zidom, drvenim gredama i klima-uređajem u Pansionu Šibenik" /></div>
           <div class="body">
-            <h3>Soba Tvrđava</h3>
-            <div class="cap"><span>2 osobe</span><span>·</span><span>16 m²</span><span>·</span><span>Tiha strana</span></div>
-            <p>Mirna soba u dnu kuće, daleko od ljetne vreve, s pogledom prema tvrđavi sv. Mihovila. Za one koji žele odmor i tišinu nakon dana u gradu.</p>
-            <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>Wi‑Fi</span><span>Doručak</span><span>Tiha lokacija</span></div>
-          </div>
-        </div></div>
-
-        <div class="swiper-slide"><div class="room-card">
-          <div class="ph"><img src="https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=900&q=80" alt="Soba Loža" /></div>
-          <div class="body">
-            <h3>Soba Loža</h3>
-            <div class="cap"><span>2 osobe</span><span>·</span><span>20 m²</span><span>·</span><span>Romantična</span></div>
-            <p>Soba s malim francuskim balkonom iznad kamene uličice. Predvečer, kad se grad smiri, ovdje se najbolje sluša Šibenik.</p>
-            <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>Wi‑Fi</span><span>Doručak</span><span>Balkončić</span></div>
+            <h3>Obiteljske jedinice</h3>
+            <div class="cap"><span>Na upit</span><span>·</span><span>Kamena kuća</span></div>
+            <p>Objekt raspolaže i obiteljskim sobama te apartmanima. Za točan raspored ležajeva, dostupnost i cijenu javite se telefonom ili upitom.</p>
+            <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>Wi‑Fi</span><span>Aparat za kavu/čaj</span></div>
           </div>
         </div></div>
 
@@ -322,12 +405,12 @@ footer{background:var(--ink);color:#E9E3D7;padding:90px 0 40px}
 <!-- O NAMA -->
 <section class="manifest pad-sm">
   <div class="wrap grid">
-    <div class="clip reveal-clip"><img src="https://images.unsplash.com/photo-1556909211-36987daf7b4d?auto=format&fit=crop&w=1100&q=80" alt="Domaćin pansiona" /></div>
+    <div class="clip reveal-clip"><img src="img/pansion-sibenik-soba-tv.webp" width="1600" height="1200" loading="lazy" alt="Soba u Pansionu Šibenik s TV-om, radnim stolom i vlastitom kupaonicom" /></div>
     <div>
-      <div class="eyebrow reveal">O nama</div>
-      <h2 class="reveal" style="font-size:clamp(1.9rem,4vw,3rem);margin-top:12px">Obitelj koja živi u istoj ulici</h2>
-      <p class="reveal muted" style="margin-top:18px">Pansion vodimo kao dom, ne kao hotel. Kuća je naša, kao i susjedstvo — pa vam najbolji savjet o gradu damo iz iskustva, a ne s brošure. Reći ćemo vam gdje se pije najbolja kava, kada krenuti na tvrđavu sv. Nikole i kojom se uličicom najljepše silazi do mora.</p>
-      <p class="reveal muted" style="margin-top:14px">Dočekat ćemo vas osobno, pomoći s parkingom u staroj jezgri i pobrinuti se da se osjećate kao gost, a ne kao rezervacija. Šibenik je naš grad — drago nam je što ćete ga upoznati s nama.</p>
+      <div class="eyebrow reveal">O objektu</div>
+      <h2 class="reveal" style="font-size:clamp(1.9rem,4vw,3rem);margin-top:12px">Boravak u staroj kamenoj kući</h2>
+      <p class="reveal muted" style="margin-top:18px">Pansion se nalazi u staroj kamenoj kući u jezgri Šibenika, a sobe i apartmani uređeni su u mediteranskom stilu. Objekt je okružen restoranima, trgovinama i kafićima te kulturnim i povijesnim znamenitostima do kojih se dolazi pješice.</p>
+      <p class="reveal muted" style="margin-top:14px">Gosti na Booking.comu lokaciju objekta ocjenjuju s 9,4/10, a ukupnu ocjenu 8,5/10 iz 230 recenzija (stanje 15.07.2026.). Iz jezgre se pješice kreće prema tvrđavama, rivi i gradskoj plaži.</p>
     </div>
   </div>
 </section>
@@ -338,34 +421,34 @@ footer{background:var(--ink);color:#E9E3D7;padding:90px 0 40px}
     <div class="sec-head">
       <div class="eyebrow reveal">Otkrijte grad</div>
       <h2 class="reveal">Šibenik pred vašim vratima</h2>
-      <p class="reveal">Sve počinje na pragu pansiona. Tri mjesta po kojima ćete pamtiti grad — i sva su nadohvat ruke.</p>
+      <p class="reveal">Stara jezgra je pješačka zona. Tri mjesta do kojih se od pansiona stiže pješice.</p>
     </div>
     <div class="grid">
-      <div class="exp-card reveal"><img src="https://images.unsplash.com/photo-1591289009723-aef0a1a8a211?auto=format&fit=crop&w=900&q=80" alt="Katedrala sv. Jakova" />
-        <div class="t"><div class="n">UNESCO · 50 m</div><h3>Katedrala sv. Jakova</h3><p>Remek‑djelo Jurja Dalmatinca, sagrađeno bez maltera — samo kamen i umijeće. Frizu od stotinu kamenih glava nema premca u Europi.</p></div>
+      <div class="exp-card reveal"><img src="img/sibenik-katedrala-sv-jakova.webp" width="913" height="1400" loading="lazy" alt="Kupola katedrale sv. Jakova u Šibeniku" />
+        <div class="t"><div class="n">UNESCO · 50 m</div><h3>Katedrala sv. Jakova</h3><p>Djelo Jurja Dalmatinca, u cijelosti sagrađeno od kamena, bez drvene građe i vezivne žbuke. Na apsidi je friz od 71 isklesane glave.</p></div>
       </div>
-      <div class="exp-card reveal"><img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=900&q=80" alt="Tvrđava sv. Nikole" />
-        <div class="t"><div class="n">UNESCO · Kanal sv. Ante</div><h3>Tvrđava sv. Nikole</h3><p>Mletačka utvrda na ulazu u kanal, jedna od najljepših pomorskih utvrda Jadrana. Ljeti ovdje žive koncerti pod zvijezdama.</p></div>
+      <div class="exp-card reveal"><img src="img/sibenik-tvrdjava-sv-mihovila.webp" width="1000" height="650" loading="lazy" alt="Tvrđava sv. Mihovila iznad krovova stare jezgre Šibenika, zračni pogled" />
+        <div class="t"><div class="n">Vidikovac · oko 200 m</div><h3>Tvrđava sv. Mihovila</h3><p>Najstarija šibenska utvrda, uz stube iznad jezgre. Unutar zidina je ljetna pozornica, a s bedema puca pogled na krovove i kanal.</p></div>
       </div>
-      <div class="exp-card reveal"><img src="https://images.unsplash.com/photo-1555990538-c52d4a1d6c46?auto=format&fit=crop&w=900&q=80" alt="Stari grad Šibenik" />
-        <div class="t"><div class="n">Stara jezgra</div><h3>Strme kamene ulice</h3><p>Labirint stuba, prolaza i malih trgova. Izgubite se namjerno — svaki ugao otkriva novi pogled na grad i more.</p></div>
+      <div class="exp-card reveal"><img src="img/sibenik-stare-ulice.webp" width="984" height="1400" loading="lazy" alt="Uska kamena ulica sa stubama u staroj jezgri Šibenika" />
+        <div class="t"><div class="n">Stara jezgra</div><h3>Strme kamene ulice</h3><p>Labirint stuba, prolaza i malih trgova oko pansiona. Autobusni kolodvor i trajektna luka su na pet minuta hoda.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- USLUGE / DORUČAK -->
+<!-- SADRŽAJI -->
 <section class="usluge pad" id="usluge">
   <div class="wrap u-grid">
-    <div class="clip reveal-clip"><img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1100&q=80" alt="Domaći doručak" /></div>
+    <div class="clip reveal-clip"><img src="img/pansion-sibenik-kupaonica.webp" width="900" height="1200" loading="lazy" alt="Kupaonica s kadom u Pansionu Šibenik" /></div>
     <div>
-      <div class="eyebrow reveal">Doručak i usluge</div>
-      <h2 class="reveal" style="font-size:clamp(1.9rem,4vw,3rem);margin-top:12px">Dan koji počinje dobro</h2>
+      <div class="eyebrow reveal">Sadržaji</div>
+      <h2 class="reveal" style="font-size:clamp(1.9rem,4vw,3rem);margin-top:12px">Što je uključeno</h2>
       <ul class="u-list">
-        <li class="reveal"><span class="ic">✦</span><div><h4>Domaći doručak</h4><p>Svježi kruh, dalmatinski pršut i sir, jaja, sezonsko voće i prava kava — uračunato u cijenu sobe.</p></div></li>
-        <li class="reveal"><span class="ic">✦</span><div><h4>Savjet domaćina</h4><p>Karta grada s našim omiljenim mjestima, rezervacije u konobama i pravi raspored za dan.</p></div></li>
-        <li class="reveal"><span class="ic">✦</span><div><h4>Pomoć s parkingom</h4><p>Stara jezgra je pješačka — pokazat ćemo vam najbliže parkiralište i kako do njega.</p></div></li>
-        <li class="reveal"><span class="ic">✦</span><div><h4>Izleti i prijevoz</h4><p>Organiziramo transfere, izlete brodom prema NP Krka i Kornatima te savjete za ulaznice.</p></div></li>
+        <li class="reveal"><span class="ic">✦</span><div><h4>Vlastita kupaonica</h4><p>Svaka jedinica ima vlastitu kupaonicu s kadom ili tušem, ručnike, toaletni pribor i sušilo za kosu.</p></div></li>
+        <li class="reveal"><span class="ic">✦</span><div><h4>Klima i besplatni Wi-Fi</h4><p>Zaseban klima-uređaj u jedinici, grijanje, zvučna izolacija i besplatni bežični internet u cijelom objektu.</p></div></li>
+        <li class="reveal"><span class="ic">✦</span><div><h4>Aparat za kavu i čaj</h4><p>U svakoj smještajnoj jedinici je aparat za pripremu kave i čaja te električno kuhalo za vodu. Objekt nema restoran i ne poslužuje doručak.</p></div></li>
+        <li class="reveal"><span class="ic">✦</span><div><h4>Parkiranje</h4><p>Stara jezgra je pješačka zona. Javno parkiralište je u blizini objekta, bez mogućnosti rezervacije, po cijeni od 1,33 € na sat.</p></div></li>
       </ul>
     </div>
   </div>
@@ -376,15 +459,15 @@ footer{background:var(--ink);color:#E9E3D7;padding:90px 0 40px}
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow reveal">Galerija</div>
-      <h2 class="reveal">Trenuci iz Šibenika</h2>
+      <h2 class="reveal">Pansion i grad</h2>
     </div>
     <div class="g reveal">
-      <a><img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=900&q=80" alt="Krovovi i katedrala" /></a>
-      <a><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=700&q=80" alt="Svijetla soba" /></a>
-      <a><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=700&q=80" alt="Kamene stube" /></a>
-      <a><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=700&q=80" alt="Jadransko more" /></a>
-      <a><img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=700&q=80" alt="Doručak" /></a>
-      <a><img src="https://images.unsplash.com/photo-1505735822548-7c4b8e7c3a08?auto=format&fit=crop&w=900&q=80" alt="Detalj kamena" /></a>
+      <a><img src="img/pansion-sibenik-soba-comfort.webp" width="1600" height="1200" loading="lazy" alt="Dvokrevetna soba Comfort s bračnim krevetom" /></a>
+      <a><img src="img/pansion-sibenik-soba-kamena-2.webp" width="1050" height="1400" loading="lazy" alt="Soba s kamenim zidom i drvenim gredama" /></a>
+      <a><img src="img/pansion-sibenik-kupaonica.webp" width="900" height="1200" loading="lazy" alt="Kupaonica s kadom" /></a>
+      <a><img src="img/pansion-sibenik-kava-caj.webp" width="461" height="1000" loading="lazy" alt="Aparat za kavu i čaj u smještajnoj jedinici" /></a>
+      <a><img src="img/pansion-sibenik-soba-tv.webp" width="1600" height="1200" loading="lazy" alt="Soba s TV-om i radnim stolom" /></a>
+      <a><img src="img/sibenik-panorama.webp" width="1600" height="840" loading="lazy" alt="Šibenik i stara jezgra iznad kanala" /></a>
     </div>
   </div>
 </section>
@@ -395,21 +478,49 @@ footer{background:var(--ink);color:#E9E3D7;padding:90px 0 40px}
     <div class="sec-head">
       <div class="eyebrow reveal">Lokacija</div>
       <h2 class="reveal">Točno tamo gdje želite biti</h2>
-      <p class="reveal">Kačića Miošića 5, u staroj jezgri — pedeset metara od katedrale, na minute od rive i svih znamenitosti.</p>
+      <p class="reveal">Ul. Andrije Kačića Miošića 5, u staroj jezgri Šibenika, 50 metara od katedrale sv. Jakova.</p>
     </div>
     <div class="loc-grid">
       <div class="loc-info reveal">
-        <div class="row"><span class="k">Adresa</span><span class="v">Kačića Miošića 5<br>22000 Šibenik, Hrvatska</span></div>
+        <div class="row"><span class="k">Adresa</span><span class="v">Ul. Andrije Kačića Miošića 5<br>22000 Šibenik, Hrvatska</span></div>
         <div class="row"><span class="k">Do katedrale</span><span class="v">≈ 50 m pješice</span></div>
-        <div class="row"><span class="k">Do rive / mora</span><span class="v">≈ 3 min pješice</span></div>
-        <div class="row"><span class="k">Prijava</span><span class="v">od 14:00</span></div>
+        <div class="row"><span class="k">Gradska plaža</span><span class="v">5 min hoda</span></div>
+        <div class="row"><span class="k">Kolodvor / trajekt</span><span class="v">5 min hoda</span></div>
+        <div class="row"><span class="k">Željeznički kolodvor</span><span class="v">10 min hoda</span></div>
+        <div class="row"><span class="k">Prijava</span><span class="v">14:00 – 22:00</span></div>
         <div class="row"><span class="k">Odjava</span><span class="v">do 10:00</span></div>
+        <div class="row"><span class="k">Parkiranje</span><span class="v">javno u blizini, 1,33 €/h</span></div>
         <div class="row"><span class="k">Telefon</span><span class="v"><a href="tel:+385989801862" style="color:var(--accent)">+385 98 980 1862</a></span></div>
         <a class="btn btn-solid" data-enquiry style="margin-top:26px">Pošalji upit</a>
       </div>
       <div class="map-frame reveal">
-        <iframe src="https://maps.google.com/maps?q=Pansion+Sibenik+Sibenik&output=embed" loading="lazy" title="Karta — Pansion Šibenik"></iframe>
+        <iframe src="https://maps.google.com/maps?q=43.7358661,15.8898207&z=17&output=embed" loading="lazy" title="Karta — Pansion Šibenik, Ul. Andrije Kačića Miošića 5"></iframe>
       </div>
+    </div>
+    <div class="reveal" style="margin-top:46px;max-width:74ch">
+      <p class="muted" style="font-size:.98rem">Pansion je u staroj gradskoj jezgri Šibenika, u Ulici Andrije Kačića Miošića, pedesetak metara od katedrale sv. Jakova i Trga Republike Hrvatske. Uz stube iznad kuće, na oko 200 metara, je tvrđava sv. Mihovila s ljetnom pozornicom i vidikovcem nad kanalom. Jezgra je pješačka zona: najbliže javno parkiralište je u blizini objekta, naplata je 1,33 € na sat i nije ga moguće rezervirati. Glavna gradska plaža te autobusni kolodvor i trajektna luka udaljeni su pet minuta hoda, a željeznički kolodvor deset. Dolazak automobilom je s D8 prema staroj jezgri, a dalje se u grad ide pješice.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq pad-sm" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal">Česta pitanja</div>
+      <h2 class="reveal">Info prije dolaska</h2>
+    </div>
+    <div class="q-list reveal">
+      <details open><summary>Gdje se nalazi Pansion Šibenik?</summary><p>Na adresi Ul. Andrije Kačića Miošića 5, u staroj jezgri Šibenika, 50 metara od katedrale sv. Jakova. Stara jezgra je pješačka zona, pa se do objekta dolazi pješice.</p></details>
+      <details><summary>Koje je vrijeme prijave i odjave?</summary><p>Prijava je od 14:00 do 22:00, a odjava do 10:00. Raniju ili kasniju prijavu i odjavu možete zatražiti kao poseban zahtjev pri rezervaciji, ali ispunjenje nije zajamčeno.</p></details>
+      <details><summary>Poslužuje li pansion doručak?</summary><p>Doručak nije naveden među sadržajima objekta i nije uključen u cijenu smještaja. U svakoj smještajnoj jedinici je aparat za pripremu kave i čaja te kuhalo za vodu, a pekare i kafići su u susjednim ulicama stare jezgre.</p></details>
+      <details><summary>Ima li pansion restoran?</summary><p>Ne, objekt nema restoran. Okružen je restoranima, konobama, trgovinama i kafićima stare jezgre, do kojih se dolazi pješice.</p></details>
+      <details><summary>Gdje parkirati?</summary><p>Javno parkiralište dostupno je u blizini objekta i nije ga moguće rezervirati. Cijena parkiranja je 1,33 € po satu. Stara jezgra je pješačka zona.</p></details>
+      <details><summary>Primate li kućne ljubimce?</summary><p>Ne, boravak kućnih ljubimaca nije dozvoljen u objektu.</p></details>
+      <details><summary>Nudite li prijevoz iz zračne luke?</summary><p>Ne, usluga prijevoza iz i do zračne luke nije dostupna u objektu. Autobusni kolodvor i trajektna luka su na pet minuta hoda.</p></details>
+      <details><summary>Kako su sobe opremljene?</summary><p>Sve sobe imaju klima-uređaj, vlastitu kupaonicu s kadom ili tušem, TV s ravnim ekranom sa zemaljskim i satelitskim programom, zvučnu izolaciju i besplatni Wi-Fi. U jedinicama su i hladnjak, radni stol, sušilo za kosu te aparat za kavu i čaj. Objekt ima obiteljske sobe i sobe za nepušače.</p></details>
+      <details><summary>Koliko je do plaže, kolodvora i trajektne luke?</summary><p>Glavna gradska plaža udaljena je 5 minuta hoda. Autobusni kolodvor i trajektna luka također su na 5 minuta hoda, a željeznički kolodvor na 10 minuta hoda.</p></details>
+      <details><summary>Kako rezervirati sobu?</summary><p>Nazovite +385 98 980 1862 ili pošaljite upit putem obrasca na ovoj stranici. Cijene ovise o terminu i broju gostiju, pa ih potvrđujemo na upit.</p></details>
     </div>
   </div>
 </section>
@@ -419,25 +530,29 @@ footer{background:var(--ink);color:#E9E3D7;padding:90px 0 40px}
   <div class="wrap f-grid">
     <div>
       <div class="f-brand">Pansion Šibenik</div>
-      <p>Obiteljski pansion u staroj jezgri Šibenika, na pedeset metara od katedrale sv. Jakova. Soba, doručak i cijeli UNESCO grad pred vratima.</p>
+      <p>Pansion u staroj jezgri Šibenika, na pedeset metara od katedrale sv. Jakova. Sobe i apartmani u staroj kamenoj kući.</p>
     </div>
     <div>
       <h4>Pansion</h4>
       <a href="#sobe">Sobe</a>
-      <a href="#usluge">Doručak i usluge</a>
+      <a href="#usluge">Sadržaji</a>
       <a href="#grad">Otkrij Šibenik</a>
       <a href="#galerija">Galerija</a>
+      <a href="#faq">Česta pitanja</a>
     </div>
     <div>
       <h4>Kontakt</h4>
       <a class="f-tel" href="tel:+385989801862">+385 98 980 1862</a>
-      <a href="#lokacija">Kačića Miošića 5<br>22000 Šibenik</a>
+      <a href="#lokacija">Ul. Andrije Kačića Miošića 5<br>22000 Šibenik</a>
       <a data-enquiry style="cursor:pointer;color:#E9B79C">Pošalji upit →</a>
     </div>
   </div>
   <div class="wrap f-bottom">
     <span>© 2026 Pansion Šibenik. Sva prava pridržana.</span>
     <span>Stari grad · UNESCO baština · Jadran</span>
+  </div>
+  <div class="wrap" style="margin-top:18px">
+    <p class="attrib">Fotografije grada: „240531 View to Sibenik (may 2024)” © Alexander Rumpel, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · „Cathedral of St James, Šibenik 01 (js)” © Jerzy Strzelecki, <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · „HR-Sibenik-Zagrebacka-1” © SchiDD, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · „Aerial image of St. Michael's Fortress, Šibenik” © Carsten Steger, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener" target="_blank">CC BY-SA 4.0</a> — sve preko Wikimedia Commons. Fotografije objekta: vlasnički materijal s Booking.com listinga objekta.</p>
   </div>
 </footer>
 
@@ -513,6 +628,7 @@ new Swiper('.roomSwiper',{
   navigation:{nextEl:'.rnext',prevEl:'.rprev'},
   breakpoints:{640:{slidesPerView:2,spaceBetween:24},1024:{slidesPerView:3,spaceBetween:28}}
 });
+// Swiper se inicijalizira s 3 stvarne kartice (2 tipa soba s Bookinga + obiteljske jedinice na upit)
 
 // enquiry panel
 const overlay=document.querySelector('.panel-overlay'), panel=document.querySelector('.panel');
